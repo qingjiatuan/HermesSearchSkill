@@ -114,7 +114,35 @@ Unified Research 是一个**调度路由层**，它通过适配器整合以下�
 
 > 💡 **是的，必须安装这些依赖技能**！Unified Research 本身不包含搜索逻辑，它负责智能路由、分层 fallback 和结果融合。
 
-### 🚀 一键安装所有依赖（推荐）
+### 分步手动安装依赖
+
+如果你想手动控制安装过程：
+
+```bash
+# ✅ Layer 1: Union Search (必须)
+git clone https://github.com/runningZ1/union-search-skill.git
+cp -r union-search-skill ~/.hermes/skills/research/union-search-skill/
+# Windows: xcopy union-search-skill %APPDATA%\hermes\skills\research\union-search-skill\ /E
+
+# ✅ Layer 2: AnySearch (必须)
+git clone https://github.com/anysearch-ai/anysearch-skill.git
+cp -r anysearch-skill ~/.hermes/plugins/anysearch-skill/
+# Windows: xcopy anysearch-skill %APPDATA%\hermes\plugins\anysearch-skill\ /E
+
+# ✅ Layer 3: Agent Reach (建议安装，社交媒体增强)
+git clone https://github.com/Panniantong/Agent-Reach.git
+cp -r Agent-Reach ~/.hermes/plugins/Agent-Reach/
+# Windows: xcopy Agent-Reach %APPDATA%\hermes\plugins\Agent-Reach\ /E
+
+# ⚠️ Layer 4: Firecrawl (按需，需要API Key，会产生费用)
+git clone https://github.com/firecrawl/firecrawl.git
+cp -r firecrawl ~/.hermes/plugins/firecrawl/
+# Windows: xcopy firecrawl %APPDATA%\hermes\plugins\firecrawl\ /E
+```
+
+---
+
+### 🚀 一键安装所有依赖（推荐）### 🚀 一键安装所有依赖（推荐）
 
 ```bash
 # 进入技能目录
