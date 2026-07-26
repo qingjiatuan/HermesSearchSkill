@@ -31,7 +31,7 @@ Layer 4: Firecrawl (深度全文抓取) ⏳ 待实现
 ### 方式一：Hermes 插件安装（推荐）
 
 ```bash
-hermes plugins install git@github.com:你的用户名/HermesSearchSkill.git --enable
+hermes plugins install git@github.com:qingjiatuan/HermesSearchSkill.git --enable
 ```
 
 ### 方式二：手动安装
