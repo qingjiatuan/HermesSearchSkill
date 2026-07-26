@@ -1,0 +1,78 @@
+cost_priority: balanced
+fallback:
+  layer1_min_results: 5
+  layer1_min_score: 0.6
+  layer2_min_results: 8
+  layer2_min_score: 0.7
+  layer3_min_results: 10
+  layer3_min_score: 0.8
+limits:
+  enable_firecrawl_by_default: false
+  firecrawl_max_pages_per_query: 10
+  max_free_calls_per_query: 5
+routing:
+  enable_intent_recognition: true
+  enable_platform_routing: true
+  platform_keywords:
+    bilibili:
+    - b站
+    - bilibili
+    - 哔哩哔哩
+    github:
+    - github
+    - 代码
+    - 仓库
+    - repo
+    - issue
+    - pr
+    linkedin:
+    - linkedin
+    - 领英
+    - 招聘
+    - 求职
+    - 职位
+    reddit:
+    - reddit
+    - reddit 讨论
+    twitter:
+    - 推特
+    - twitter
+    - x.com
+    - 推文
+    v2ex:
+    - v2ex
+    xiaohongshu:
+    - 小红书
+    - xhs
+    - xiaohongshu
+    - 红书
+    xueqiu:
+    - 雪球
+    - 股票
+    - 行情
+    - xueqiu
+    - 股价
+    youtube:
+    - youtube
+    - youtube 视频
+    - 油管
+scoring:
+  authority_scores:
+    anysearch: 0.9
+    arxiv: 0.95
+    baidu: 0.75
+    bilibili: 0.8
+    bing: 0.85
+    firecrawl: 0.95
+    github: 0.95
+    reddit: 0.85
+    so360: 0.7
+    sogou: 0.75
+    v2ex: 0.8
+    xiaohongshu: 0.7
+    xueqiu: 0.85
+  weights:
+    authority: 0.2
+    relevance: 0.5
+    timeliness: 0.3
+version: 1.0.0

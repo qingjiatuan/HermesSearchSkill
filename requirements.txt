@@ -1,0 +1,9 @@
+pyyaml>=6.0
+requests>=2.31.0
+
+# 可选依赖（按需安装）
+# metapub>=0.5.5        # PubMed
+# pyalex>=0.11.0        # OpenAlex
+# habanero>=1.2.3       # Crossref
+# semanticscholar>=0.5.0  # Semantic Scholar
+# arxiv>=2.0.0          # arXiv
