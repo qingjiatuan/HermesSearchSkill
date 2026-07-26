@@ -62,17 +62,20 @@ def main():
     print()
     
     # 定义依赖
+    # 依赖技能的 GitHub 仓库地址
     dependencies = [
         {
             "name": "union-search-skill",
-            "git_url": "git@github.com:runningZ1/union-search-skill.git",
+            "git_url": "git@github.com:runningZ1/union-search-skill.git",  # https://github.com/runningZ1/union-search-skill
+            "homepage": "https://github.com/runningZ1/union-search-skill",
             "target": f"{hermes_dir}/skills/research/union-search-skill",
             "required": True,
             "description": "多引擎并行搜索（Bing/百度/360/搜狗）"
         },
         {
             "name": "anysearch-skill",
-            "git_url": "git@github.com:anysearch-ai/anysearch-skill.git",
+            "git_url": "git@github.com:anysearch-ai/anysearch-skill.git",  # https://github.com/anysearch-ai/anysearch-skill
+            "homepage": "https://github.com/anysearch-ai/anysearch-skill",
             "target": f"{hermes_dir}/plugins/anysearch-skill",
             "required": True,
             "description": "实时搜索 + 垂直领域"

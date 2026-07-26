@@ -93,28 +93,36 @@ scoring:
 ```
 
 
-## 依赖安装
+## 依赖技能
 
-Unified Research 依赖以下技能提供搜索能力：
+Unified Research 是一个**调度路由层**，它通过适配器整合以下搜索技能的能力：
 
-| 技能 | 必需 | 功能 |
-|------|------|------|
-| union-search-skill | ✅ | 多引擎并行搜索（Bing/百度/360/搜狗） |
-| anysearch-skill | ✅ | 实时搜索 + 垂直领域 |
-| agent-reach | ⏳ | 平台定向搜索（开发中） |
-| firecrawl | ⏳ | 深度全文抓取（开发中） |
+| 技能 | 必需 | GitHub 仓库 | 功能 |
+|------|------|-------------|------|
+| **union-search-skill** | ✅ | [runningZ1/union-search-skill](https://github.com/runningZ1/union-search-skill) | 多引擎并行搜索（Bing/百度/360/搜狗），完全免费 |
+| **anysearch-skill** | ✅ | [anysearch-ai/anysearch-skill](https://github.com/anysearch-ai/anysearch-skill) | 实时搜索 + 15+垂直领域，免费限额 |
+| **agent-reach** | ⏳ | [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach) | 小红书/B站/Twitter/雪球等平台定向搜索 |
+| **firecrawl** | ⏳ | [firecrawl/firecrawl](https://github.com/firecrawl/firecrawl) | 深度全文抓取 + 结构化数据提取 |
 
-### 一键安装所有依赖
+> 💡 **是的，必须安装这些依赖技能**！Unified Research 本身不包含搜索逻辑，它负责智能路由、分层 fallback 和结果融合。
+
+### 🚀 一键安装所有依赖（推荐）
 
 ```bash
 # 进入技能目录
 cd path/to/hermes-unified-research
 
-# 运行依赖检查与安装脚本
+# 运行脚本自动检查并 git clone 所有缺失的依赖
 python check_deps.py
 ```
 
-### 手动安装
+脚本会自动下载以下仓库到正确的位置：
+- union-search-skill → `skills/research/`
+- anysearch-skill → `plugins/`
+
+---
+
+### 手动安装（如果一键脚本失败）
 
 ```bash
 # 1. 安装 union-search-skill
@@ -122,6 +130,9 @@ hermes plugins install git@github.com:runningZ1/union-search-skill.git --enable
 
 # 2. 安装 anysearch-skill
 hermes plugins install git@github.com:anysearch-ai/anysearch-skill.git --enable
+
+# 3. 可选：安装 agent-reach
+hermes plugins install git@github.com:Panniantong/Agent-Reach.git --enable
 ```
 
 ### 配置 AnySearch API Key
@@ -172,3 +183,29 @@ MIT License
 ## 贡献
 
 欢迎提交 Issue 和 Pull Request！
+
+## ❓ 常见问题
+
+### Q: 必须安装所有依赖技能吗？
+
+**A**: `union-search-skill` 和 `anysearch-skill` 是必须的。
+- ✅ union-search-skill 提供基础的免费搜索引擎能力
+- ✅ anysearch-skill 提供实时搜索和垂直领域能力
+- ⏳ agent-reach 和 firecrawl 是可选的，适配器正在开发中
+
+### Q: 为什么不把这些功能直接整合进来？
+
+**A**: 这是**解耦设计**的考量：
+1. **独立迭代**：每个搜索技能可以独立更新、优化、修复
+2. **灵活替换**：如果你有更好的搜索方案，可以替换某个适配器而不影响整体
+3. **能力复用**：这些技能本身也可以独立使用
+4. **渐进增强**：先安装核心依赖，需要时再添加更多能力
+
+### Q: 安装后怎么验证是否工作？
+
+```bash
+cd 到技能目录
+python example.py
+```
+
+如果引擎初始化成功，说明依赖路径配置正确。
