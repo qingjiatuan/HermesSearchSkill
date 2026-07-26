@@ -1,7 +1,13 @@
-# Adapters - 延迟导入，避免循环依赖
-def get_union_search_adapter():
-    from adapters.union_search_adapter import UnionSearchAdapter
-    return UnionSearchAdapter
-def get_anysearch_adapter():
-    from adapters.anysearch_adapter import AnySearchAdapter
-    return AnySearchAdapter
+from adapters.base_adapter import BaseSearchAdapter
+from adapters.union_search_adapter import UnionSearchAdapter
+from adapters.anysearch_adapter import AnySearchAdapter
+from adapters.agent_reach_adapter import AgentReachAdapter
+from adapters.firecrawl_adapter import FirecrawlAdapter
+
+__all__ = [
+    "BaseSearchAdapter",
+    "UnionSearchAdapter", 
+    "AnySearchAdapter",
+    "AgentReachAdapter",
+    "FirecrawlAdapter",
+]

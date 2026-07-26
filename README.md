@@ -19,12 +19,14 @@ Layer 1: Union Search (Bing/百度/360/搜狗 4引擎并行) ✅ 完全免费
     ↓ 结果<5条 或 平均分<0.6
 Layer 2: AnySearch (实时搜索 + 15+垂直领域) ✅ 免费限额
     ↓ 结果<8条 或 平均分<0.7
-Layer 3: Agent Reach (平台定向搜索) ⏳ 待实现
-    ↓ 仍有信息缺口 + 用户确认
-Layer 4: Firecrawl (深度全文抓取) ⏳ 待实现
+Layer 3: Agent Reach (平台定向搜索) ✅ 框架已实现（可选安装）
+    ↓ 结果<12条 + 用户已安装
+Layer 4: Firecrawl (深度全文抓取) ✅ 框架已实现（需显式启用）
     ↓
 结果融合层 → 去重 + 评分 + 排序 + 质量报告
 ```
+
+> ℹ️ **说明**：Agent Reach 和 Firecrawl 的适配器框架已完成，搜索逻辑为模拟实现，后续可根据实际 CLI/API 接口适配。
 
 ## 安装方法
 
@@ -108,7 +110,7 @@ Unified Research 是一个**调度路由层**，它通过适配器整合以下�
 | **union-search-skill** | ✅ | [runningZ1/union-search-skill](https://github.com/runningZ1/union-search-skill) | 多引擎并行搜索（Bing/百度/360/搜狗），完全免费 |
 | **anysearch-skill** | ✅ | [anysearch-ai/anysearch-skill](https://github.com/anysearch-ai/anysearch-skill) | 实时搜索 + 15+垂直领域，免费限额 |
 | **agent-reach** | ⏳ | [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach) | 小红书/B站/Twitter/雪球等平台定向搜索 |
-| **firecrawl** | ⏳ | [firecrawl/firecrawl](https://github.com/firecrawl/firecrawl) | 深度全文抓取 + 结构化数据提取 |
+| **firecrawl** | ✅ 框架已实现 | [firecrawl/firecrawl](https://github.com/firecrawl/firecrawl) | 深度全文抓取 + 结构化数据提取 |
 
 > 💡 **是的，必须安装这些依赖技能**！Unified Research 本身不包含搜索逻辑，它负责智能路由、分层 fallback 和结果融合。
 
