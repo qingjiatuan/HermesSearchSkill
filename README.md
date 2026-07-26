@@ -38,7 +38,8 @@ hermes plugins install git@github.com:你的用户名/hermes-unified-research.gi
 
 1. 克隆或下载本仓库
 2. 将文件夹复制到 Hermes 技能目录：
-   - Windows: `%APPDATA%\hermes\skillsesearch\`
+   - Windows: `%APPDATA%\hermes\skills
+esearch\`
    - Linux/macOS: `~/.hermes/skills/research/`
 3. 重启 Hermes 网关：`hermes gateway restart`
 
@@ -89,6 +90,46 @@ scoring:
     relevance: 0.5   # 相关性
     timeliness: 0.3  # 时效性
     authority: 0.2   # 来源权威性
+```
+
+
+## 依赖安装
+
+Unified Research 依赖以下技能提供搜索能力：
+
+| 技能 | 必需 | 功能 |
+|------|------|------|
+| union-search-skill | ✅ | 多引擎并行搜索（Bing/百度/360/搜狗） |
+| anysearch-skill | ✅ | 实时搜索 + 垂直领域 |
+| agent-reach | ⏳ | 平台定向搜索（开发中） |
+| firecrawl | ⏳ | 深度全文抓取（开发中） |
+
+### 一键安装所有依赖
+
+```bash
+# 进入技能目录
+cd path/to/hermes-unified-research
+
+# 运行依赖检查与安装脚本
+python check_deps.py
+```
+
+### 手动安装
+
+```bash
+# 1. 安装 union-search-skill
+hermes plugins install git@github.com:runningZ1/union-search-skill.git --enable
+
+# 2. 安装 anysearch-skill
+hermes plugins install git@github.com:anysearch-ai/anysearch-skill.git --enable
+```
+
+### 配置 AnySearch API Key
+
+编辑 `plugins/anysearch-skill/.env` 文件：
+
+```env
+ANYSEARCH_API_KEY=你的API_KEY
 ```
 
 ## 核心模块

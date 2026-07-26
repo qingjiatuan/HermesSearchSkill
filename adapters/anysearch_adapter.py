@@ -6,6 +6,7 @@ import asyncio
 import subprocess
 from typing import List, Optional
 from core.models import SearchResult, LayerResult, SearchSource
+from core.path_utils import get_anysearch_path
 from adapters.base_adapter import BaseSearchAdapter
 
 

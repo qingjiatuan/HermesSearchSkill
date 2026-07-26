@@ -7,6 +7,7 @@ import subprocess
 import json
 from typing import List, Optional
 from core.models import SearchResult, LayerResult, SearchSource
+from core.path_utils import get_union_search_path
 from adapters.base_adapter import BaseSearchAdapter
 
 
@@ -17,7 +18,7 @@ class UnionSearchAdapter(BaseSearchAdapter):
     
     def __init__(self, skill_path: str, config: dict):
         super().__init__(skill_path, config)
-        self.union_skill_path = r"C:\Users\JasonLaochen\AppData\Local\hermes\skills\research\union-search-skill"
+        self.union_skill_path = str(get_union_search_path())
         self.engines = [
             ("bing", SearchSource.BING),
             ("baidu", SearchSource.BAIDU),

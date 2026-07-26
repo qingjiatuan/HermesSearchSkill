@@ -1,0 +1,22 @@
+# 各依赖技能的路径配置
+# 根据你的实际安装路径调整
+
+union_search:
+  windows: "%APPDATA%\hermes\skills\research\union-search-skill"
+  linux: "~/.hermes/skills/research/union-search-skill"
+  macos: "~/.hermes/skills/research/union-search-skill"
+
+anysearch:
+  windows: "%APPDATA%\hermes\plugins\anysearch-skill"
+  linux: "~/.hermes/plugins/anysearch-skill"
+  macos: "~/.hermes/plugins/anysearch-skill"
+
+agent_reach:
+  windows: "%APPDATA%\hermes\plugins\agent-reach"
+  linux: "~/.hermes/plugins/agent-reach"
+  macos: "~/.hermes/plugins/agent-reach"
+
+firecrawl:
+  windows: "%APPDATA%\hermes\skills\research\firecrawl"
+  linux: "~/.hermes/skills/research/firecrawl"
+  macos: "~/.hermes/skills/research/firecrawl"
