@@ -109,7 +109,7 @@ Unified Research 是一个**调度路由层**，它通过适配器整合以下�
 |------|------|-------------|------|
 | **union-search-skill** | ✅ | [runningZ1/union-search-skill](https://github.com/runningZ1/union-search-skill) | 多引擎并行搜索（Bing/百度/360/搜狗），完全免费 |
 | **anysearch-skill** | ✅ | [anysearch-ai/anysearch-skill](https://github.com/anysearch-ai/anysearch-skill) | 实时搜索 + 15+垂直领域，免费限额 |
-| **agent-reach** | ⏳ | [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach) | 小红书/B站/Twitter/雪球等平台定向搜索 |
+| **agent-reach** | ✅ 可选 | [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach) | 小红书/B站/Twitter/雪球等平台定向搜索 |
 | **firecrawl** | ✅ 框架已实现 | [firecrawl/firecrawl](https://github.com/firecrawl/firecrawl) | 深度全文抓取 + 结构化数据提取 |
 
 > 💡 **是的，必须安装这些依赖技能**！Unified Research 本身不包含搜索逻辑，它负责智能路由、分层 fallback 和结果融合。
