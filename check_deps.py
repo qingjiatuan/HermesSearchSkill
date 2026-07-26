@@ -53,7 +53,7 @@ def install_skill(name, git_url, target_dir):
 
 def main():
     print("=" * 60)
-    print("Unified Research - 依赖检查与安装")
+    print("Hermes Search Skill - 依赖检查与安装")
     print("=" * 60)
     print()
     

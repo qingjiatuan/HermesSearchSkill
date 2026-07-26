@@ -1,6 +1,7 @@
 ---
 name: unified-research
 description: >
+  [GitHub: qingjiatuan/HermesSearchSkill](https://github.com/qingjiatuan/HermesSearchSkill)
   统一研究入口，智能路由 + 分层 fallback + 多源结果融合。自动选择最优搜索组合：
   union-search (免费多引擎) → agent-reach (平台定向) → anysearch (垂直领域) → firecrawl (深度抓取)。
   单次查询自动完成多源互补、去重、相关性排序，输出高质量研究结果。

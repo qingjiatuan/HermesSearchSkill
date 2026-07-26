@@ -1,4 +1,4 @@
-# Hermes Unified Research Skill
+# Hermes Search Skill - 统一研究技能
 
 🔬 统一研究技能 - 智能路由 + 分层 fallback + 多源结果融合
 
@@ -31,7 +31,7 @@ Layer 4: Firecrawl (深度全文抓取) ⏳ 待实现
 ### 方式一：Hermes 插件安装（推荐）
 
 ```bash
-hermes plugins install git@github.com:你的用户名/hermes-unified-research.git --enable
+hermes plugins install git@github.com:你的用户名/HermesSearchSkill.git --enable
 ```
 
 ### 方式二：手动安装
@@ -110,7 +110,7 @@ Unified Research 是一个**调度路由层**，它通过适配器整合以下�
 
 ```bash
 # 进入技能目录
-cd path/to/hermes-unified-research
+cd path/to/HermesSearchSkill
 
 # 运行脚本自动检查并 git clone 所有缺失的依赖
 python check_deps.py
