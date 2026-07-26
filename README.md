@@ -196,10 +196,11 @@ MIT License
 
 ### Q: 必须安装所有依赖技能吗？
 
-**A**: `union-search-skill` 和 `anysearch-skill` 是必须的。
-- ✅ union-search-skill 提供基础的免费搜索引擎能力
-- ✅ anysearch-skill 提供实时搜索和垂直领域能力
-- ⏳ agent-reach 和 firecrawl 是可选的，适配器正在开发中
+**A**: `union-search-skill` 和 `anysearch-skill` 是必须的核心依赖。
+- ✅ union-search-skill 提供基础的免费搜索引擎能力（Layer 1）
+- ✅ anysearch-skill 提供实时搜索和垂直领域能力（Layer 2）
+- ✅ agent-reach（可选）平台定向搜索框架已完成（Layer 3），需单独安装
+- ✅ firecrawl（可选）深度全文抓取框架已完成（Layer 4），需显式启用
 
 ### Q: 为什么不把这些功能直接整合进来？
 
