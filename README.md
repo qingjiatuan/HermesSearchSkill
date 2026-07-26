@@ -30,6 +30,12 @@ Layer 4: Firecrawl (深度全文抓取) ⏳ 待实现
 
 ### 方式一：Hermes 插件安装（推荐）
 
+#### HTTPS 方式（无需配置 SSH Key，新手推荐）
+```bash
+hermes plugins install https://github.com/qingjiatuan/HermesSearchSkill.git --enable
+```
+
+#### SSH 方式（需要配置 GitHub SSH Key）
 ```bash
 hermes plugins install git@github.com:qingjiatuan/HermesSearchSkill.git --enable
 ```
