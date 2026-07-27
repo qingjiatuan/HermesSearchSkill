@@ -61,11 +61,11 @@ class UnionSearchAdapter(BaseSearchAdapter):
         loop = asyncio.get_event_loop()
         
         if engine_name == "bing":
-            script_path = f"{self.union_skill_path}\scripts\bing\bing_cn_no_api.py"
+            script_path = f"{self.union_skill_path}/scripts/bing/bing_cn_no_api.py"
         elif engine_name == "so360":
-            script_path = f"{self.union_skill_path}\scripts\so360\so360_no_api.py"
+            script_path = f"{self.union_skill_path}/scripts/so360/so360_no_api.py"
         elif engine_name == "sogou":
-            script_path = f"{self.union_skill_path}\scripts\sogou\sogou_no_api.py"
+            script_path = f"{self.union_skill_path}/scripts/sogou/sogou_no_api.py"
         else:
             return []  # 暂不支持
         

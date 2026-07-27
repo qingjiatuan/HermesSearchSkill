@@ -17,7 +17,7 @@ class AnySearchAdapter(BaseSearchAdapter):
     
     def __init__(self, skill_path: str, config: dict):
         super().__init__(skill_path, config)
-        self.anysearch_skill_path = r"C:\Users\JasonLaochen\AppData\Local\hermes\skills\research\anysearch"
+        self.anysearch_skill_path = str(get_anysearch_path())
     
     async def search(self, query: str, max_results: int = 10, **kwargs) -> LayerResult:
         """执行 AnySearch 搜索"""
@@ -25,7 +25,7 @@ class AnySearchAdapter(BaseSearchAdapter):
         
         try:
             loop = asyncio.get_event_loop()
-            script_path = f"{self.anysearch_skill_path}\scripts\anysearch_cli.py"
+            script_path = f"{self.anysearch_skill_path}/scripts/anysearch_cli.py"
             
             proc = await loop.run_in_executor(
                 None,
