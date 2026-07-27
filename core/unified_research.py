@@ -29,13 +29,13 @@ class UnifiedResearch:
         
         # 初始化融合引擎
         self.fusion = ResultFusionEngine(self.config)
-        
+
+        # 执行日志(须在 _init_adapters 之前,因为 _log 会被调用)
+        self.execution_log: List[str] = []
+
         # 初始化适配器
         self.adapters: Dict[str, BaseSearchAdapter] = {}
         self._init_adapters()
-        
-        # 执行日志
-        self.execution_log: List[str] = []
     
     def _init_adapters(self):
         # 动态导入适配器，避免循环依赖

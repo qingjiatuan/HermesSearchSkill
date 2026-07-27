@@ -11,6 +11,10 @@ from pathlib import Path
 def get_hermes_dir():
     """获取 Hermes 配置目录"""
     if sys.platform == "win32":
+        # Hermes desktop app uses Local, CLI may use Roaming
+        local = Path(os.environ.get("LOCALAPPDATA", "")) / "hermes"
+        if local.exists():
+            return local
         return Path(os.environ.get("APPDATA")) / "hermes"
     else:
         return Path.home() / ".hermes"
@@ -26,9 +30,13 @@ def get_skill_path(skill_name: str) -> Path:
         hermes_dir / "plugins" / skill_name,
         hermes_dir / "plugins" / skill_name.replace("-skill", ""),
         hermes_dir / "plugins" / skill_name.replace("-skill", "-skill"),
-        # 技能目录
+        # 技能目录 — 各分类
         hermes_dir / "skills" / "research" / skill_name,
         hermes_dir / "skills" / "research" / skill_name.replace("-skill", ""),
+        hermes_dir / "skills" / "search" / skill_name,
+        hermes_dir / "skills" / "search" / skill_name.replace("-skill", ""),
+        hermes_dir / "skills" / "web" / skill_name,
+        hermes_dir / "skills" / "web" / skill_name.replace("-skill", ""),
     ]
     
     for path in possible_paths:
@@ -58,7 +66,23 @@ def get_anysearch_path() -> Path:
     return get_skill_path("anysearch-skill")
 
 def get_agent_reach_path() -> Path:
-    return get_skill_path("agent-reach")
+    """agent-reach is a pip package, not a skill directory"""
+    try:
+        import agent_reach
+        return Path(agent_reach.__file__).parent
+    except ImportError:
+        raise FileNotFoundError("agent-reach not installed. Run: pip install agent-reach")
 
 def get_firecrawl_path() -> Path:
+    """firecrawl skills are under web/firecrawl-*"""
+    hermes_dir = get_hermes_dir()
+    fc = hermes_dir / "skills" / "web" / "firecrawl"
+    if fc.exists():
+        return fc
+    # fallback: look for any firecrawl-* skill
+    web_dir = hermes_dir / "skills" / "web"
+    if web_dir.exists():
+        for d in web_dir.iterdir():
+            if d.name.startswith("firecrawl"):
+                return d
     return get_skill_path("firecrawl")
