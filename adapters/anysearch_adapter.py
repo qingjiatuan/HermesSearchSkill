@@ -26,11 +26,12 @@ class AnySearchAdapter(BaseSearchAdapter):
         try:
             loop = asyncio.get_event_loop()
             script_path = f"{self.anysearch_skill_path}/scripts/anysearch_cli.py"
-            
+
+            import sys as _sys
             proc = await loop.run_in_executor(
                 None,
                 lambda: subprocess.run(
-                    ["python", script_path, "search", query, "--max_results", str(max_results)],
+                    [_sys.executable, script_path, "search", query, "--max_results", str(max_results)],
                     capture_output=True,
                     text=True,
                     timeout=30,
